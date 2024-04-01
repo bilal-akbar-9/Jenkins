@@ -6,10 +6,17 @@ pipeline {
     
     stages {
          stage('Checkout') {
-          steps {
-              sh 'git clone https://github.com/bilal-akbar-9/Jenkins/ newDirectory'
+            steps {
+            script {
+                sh '''
+                if [ ! -d "newDirectory" ]; then
+                    git clone https://github.com/bilal-akbar-9/Jenkins/
+                fi
+                '''
+                }
             }
-          }
+        }
+
          stage('build') {
           steps {
               sh 'npm install'
