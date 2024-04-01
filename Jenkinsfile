@@ -5,21 +5,21 @@ pipeline {
     stages {
          stage('build') {
           steps {
-              bat 'npm install'
+              sh 'npm install'
             }
           }
         
         stage('Docker Comopse Up') {
             steps {
                
-                    bat "docker compose up"
+                    sh "docker compose up"
                 
             }
         }
          stage('kill') {
             steps {
                
-                    bat "docker compose down"
+                    sh "docker compose down"
                 
             }
         }
