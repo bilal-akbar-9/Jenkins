@@ -5,9 +5,19 @@ pipeline {
     tools {nodejs "nodejs-20"} 
     
     stages {
+         stage('Checkout') {
+          steps {
+              sh 'git clone https://github.com/bilal-akbar-9/Jenkins/'
+            }
+          }
          stage('build') {
           steps {
               sh 'npm install'
+            }
+          }
+        stage('test') {
+          steps {
+              sh 'npm run test'
             }
           }
          stage('Initialize'){
