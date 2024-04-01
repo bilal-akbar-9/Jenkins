@@ -7,7 +7,7 @@ pipeline {
     stages {
          stage('Checkout') {
           steps {
-              sh 'git clone https://github.com/bilal-akbar-9/Jenkins/'
+              sh 'git clone https://github.com/bilal-akbar-9/Jenkins/ newDirectory'
             }
           }
          stage('build') {
